@@ -1,19 +1,196 @@
 const LOGIN='https://www.spxos.com.br/entrar';
+
 const modules={
- crm:{tag:'CRM COMERCIAL',title:'Cada oportunidade com contexto, responsável e próximo movimento.',desc:'Organize leads por etapa, unidade, origem, procedimento, responsável e potencial financeiro. O CRM deixa de ser cadastro e passa a orientar execução.',img:'/product/jornada.webp',stats:[['412','oportunidades recebidas'],['R$ 184 mil','valor fechado no período']],items:['Jornada visual do lead ao fechamento','Potencial financeiro por etapa','Filtros por unidade, origem e responsável','Movimentação rápida e próxima ação']},
- conversas:{tag:'CONVERSAS',title:'WhatsApp dentro do contexto comercial.',desc:'A conversa deixa de viver solta. O time atende vendo etapa, procedimento, responsável, agendamento, orçamento, próxima ação e histórico da oportunidade.',img:'/product/conversas.webp',stats:[['1 lugar','para conversa e contexto'],['0 abas','para reconstruir o histórico']],items:['Central de conversas por status','Ficha comercial junto da conversa','Templates e atalhos operacionais','Etapa e retorno sem sair do atendimento']},
- jornada:{tag:'JORNADA & AGENDA',title:'A operação começa pelo que precisa acontecer agora.',desc:'Interesses sem agenda, retornos vencidos, avaliações a confirmar, faltosos e acompanhamentos aparecem como prioridades operacionais.',img:'/product/hoje.webp',stats:[['14','interesses sem agenda'],['6','retornos vencidos no exemplo']],items:['Pendências priorizadas por urgência','Agenda e confirmações no mesmo fluxo','Recuperação de retornos e faltosos','Próxima ação visível para o time']},
- inteligencia:{tag:'DESEMPENHO',title:'O dado precisa terminar em uma decisão.',desc:'Acompanhe o caminho da oportunidade, conversão entre etapas, faturamento, canais, procedimentos e responsáveis para enxergar onde a operação perde eficiência.',img:'/product/desempenho.webp',stats:[['61,4%','conversão no ponto de atenção'],['64','tratamentos fechados no exemplo']],items:['Conversão etapa a etapa','Maior ponto de atenção destacado','Análise por canal e procedimento','Desempenho por responsável e período']},
- multiunidade:{tag:'GOVERNANÇA',title:'Uma operação. Várias unidades. Uma leitura coerente.',desc:'Estruture unidades, procedimentos, fontes, motivos de perda, distribuição, automações, importação e acessos com regras claras.',img:'/product/configuracoes.webp',stats:[['3','unidades no exemplo'],['6','regras de distribuição ativas']],items:['Gestão por organização e unidade','Regras de distribuição de oportunidades','Cadastro de procedimentos e fontes','Equipe, acessos, importação e automações']}
+  crm:{
+    label:'CRM Comercial',
+    title:'O pipeline deixa de ser uma lista e passa a orientar a operação.',
+    desc:'Cada oportunidade reúne etapa, origem, unidade, procedimento, responsável, potencial financeiro e próxima ação. O time enxerga o que precisa avançar sem reconstruir contexto.',
+    img:'/product/jornada.webp',
+    facts:[['412','oportunidades recebidas'],['R$ 184 mil','valor fechado no período']],
+    items:['Jornada da entrada ao fechamento','Potencial financeiro por oportunidade','Filtros por unidade, origem e responsável','Próxima ação visível para cada lead']
+  },
+  conversas:{
+    label:'Conversas',
+    title:'Atendimento e contexto comercial na mesma tela.',
+    desc:'O WhatsApp deixa de funcionar como uma caixa de entrada isolada. Etapa, procedimento, responsável, agendamento, orçamento e histórico acompanham a conversa.',
+    img:'/product/conversas.webp',
+    facts:[['1 lugar','para conversa e contexto'],['0 abas','para reconstruir o histórico']],
+    items:['Central de conversas por status','Ficha comercial ao lado da conversa','Templates e atalhos operacionais','Movimentação de etapa sem sair do atendimento']
+  },
+  jornada:{
+    label:'Jornada & Agenda',
+    title:'O dia começa pelo que exige atenção.',
+    desc:'Interesses sem agenda, retornos vencidos, avaliações a confirmar, faltosos e acompanhamentos aparecem como trabalho operacional — não como informação perdida em relatórios.',
+    img:'/product/hoje.webp',
+    facts:[['14','interesses sem agenda'],['6','retornos vencidos no exemplo']],
+    items:['Pendências organizadas por prioridade','Agenda e confirmações no mesmo fluxo','Recuperação de retornos e faltosos','Próximas ações concentradas em uma rotina']
+  },
+  inteligencia:{
+    label:'Desempenho',
+    title:'Gestão começa quando o dado mostra onde agir.',
+    desc:'Conversão entre etapas, faturamento, canais, procedimentos e responsáveis formam uma leitura única do caminho da oportunidade e dos pontos que exigem investigação.',
+    img:'/product/desempenho.webp',
+    facts:[['61,4%','conversão no ponto de atenção'],['64','tratamentos fechados no exemplo']],
+    items:['Conversão etapa a etapa','Ponto de atenção destacado','Análise por canal e procedimento','Desempenho por responsável e período']
+  },
+  multiunidade:{
+    label:'Multiunidade',
+    title:'Governança para crescer sem perder padrão.',
+    desc:'Unidades, procedimentos, fontes, motivos de perda, distribuição, automações, importação e acessos ficam sob a mesma estrutura operacional.',
+    img:'/product/configuracoes.webp',
+    facts:[['3','unidades no exemplo'],['6','regras de distribuição ativas']],
+    items:['Gestão por organização e unidade','Distribuição de oportunidades por regra','Cadastros operacionais centralizados','Equipe, acessos, importação e automações']
+  }
 };
-const frame=(img,alt)=>`<div class="frame"><div class="framebar"><i></i><i></i><i></i><span>spx os · operação comercial</span></div><img src="${img}" alt="${alt}"></div>`;
-const cta=()=>`<section class="cta"><div class="wrap ctaGrid"><div><span class="kicker gold">ACESSO SEGURO</span><h2>Sua operação já está acontecendo.<br>Agora ela precisa estar visível.</h2><p>Entre no ambiente protegido do SPX OS e acesse sua organização, unidade e função.</p></div><div class="loginCard"><b>♛ SPX OS</b><span>AMBIENTE DO CLIENTE</span><h3>Acessar sistema</h3><p>O login oficial permanece no ambiente operacional da plataforma.</p><a class="btn goldBtn" href="${LOGIN}">Continuar para o login →</a><small>Operação por organização, unidade e função.</small></div></div></section>`;
-const home=()=>`<section class="hero"><div class="wrap heroGrid"><div><span class="pill">Marketing, vendas e dados em uma única operação</span><h1>Clareza para operar.<br><em>Direção para crescer.</em></h1><p>O SPX OS organiza oportunidades, conversas, agenda, equipe e desempenho para mostrar o que precisa da sua atenção agora — e onde a operação está deixando receita pelo caminho.</p><div class="actions"><a class="btn primary" href="${LOGIN}">Entrar no SPX OS →</a><a class="btn ghost" href="#produto">Conhecer o sistema</a></div><div class="trust"><span>✓ Operação por unidade</span><span>✓ Funções e acessos</span><span>✓ Dados de ponta a ponta</span></div></div><div class="visual"><div class="float a"><b>6 retornos vencidos</b><span>ações que exigem atenção</span></div><div class="float b"><b>R$ 184.250</b><span>valor fechado no período</span></div>${frame('/product/hoje.webp','Tela Hoje do SPX OS')}</div></div></section>
-<section class="section" id="produto"><div class="wrap"><div class="heading center"><span class="kicker">UM SISTEMA. UMA OPERAÇÃO.</span><h2>Não é mais um CRM para preencher.</h2><p>Informação operacional vira responsabilidade, prioridade e direção.</p></div><div class="cards">${[['/jornada','Hoje','Prioridade antes de volume','Pendências, agenda, confirmações e acompanhamentos pelo que exige ação.'],['/crm','CRM Comercial','Jornada visível','Cada oportunidade da entrada ao fechamento com contexto e potencial financeiro.'],['/conversas','Conversas','WhatsApp com contexto','Atendimento conectado à etapa, orçamento, responsável e próxima ação.'],['/inteligencia','Desempenho','Gestão que enxerga vazamentos','Conversão, canais, procedimentos, receita e responsáveis.'],['/multiunidade','Governança','Operação multiunidade','Unidades, distribuição, automações e acessos com regras claras.'],['/multiunidade','Estrutura','Configuração operacional','A operação se adapta sem perder padrão de gestão.']].map((x,i)=>`<a class="card" href="${x[0]}"><i>${String(i+1).padStart(2,'0')}</i><span>${x[1]}</span><h3>${x[2]}</h3><p>${x[3]}</p><b>Explorar →</b></a>`).join('')}</div></div></section>
-<section class="section dark"><div class="wrap split"><div class="heading light"><span class="kicker gold">OPERAÇÃO COMERCIAL</span><h2>Toda oportunidade precisa de um próximo movimento.</h2><p>O que entrou, quem assumiu, o que avançou, o que travou e o que virou receita.</p><a class="btn goldBtn" href="/crm">Ver CRM Comercial →</a></div><div class="steps">${['Novo Lead','Contato','Qualificação','Agendamento','Comparecimento','Fechamento'].map((s,i)=>`<div><small>${String(i+1).padStart(2,'0')}</small><b>${s}</b><span>›</span></div>`).join('')}</div></div></section>
-<section class="section"><div class="wrap insight"><div><div class="heading"><span class="kicker">DADO → LEITURA → PRIORIDADE → AÇÃO</span><h2>O dado precisa terminar em uma decisão.</h2><p>Mais leads não corrigem uma operação que não enxerga o próprio vazamento.</p></div><div class="metrics">${[['412','Leads'],['266','Contatados'],['166','Agendados'],['102','Compareceram'],['64','Fecharam']].map((m,i)=>`<div class="metric ${i===2?'alert':''}"><b>${m[0]}</b><span>${m[1]}</span></div>`).join('')}</div><div class="notice"><span>MAIOR PONTO DE ATENÇÃO</span><b>Agendados: 61,4% de conversão</b><p>Priorize o gargalo antes de comprar mais volume no topo.</p></div></div>${frame('/product/desempenho.webp','Tela de desempenho do SPX OS')}</div></section>
-<section class="section ivory"><div class="wrap"><div class="heading center"><span class="kicker">CRESCIMENTO ORGANIZADO</span><h2>Marketing e vendas precisam enxergar a mesma empresa.</h2></div><div class="audiences">${[['Marketing','Origem, campanha, canal e qualidade da oportunidade.'],['Comercial','Atendimento, follow-up, agenda, proposta e próxima ação.'],['Gestão','Conversão, perdas, receita e desempenho.'],['Multiunidade','Governança, equipe, distribuição e acessos.']].map(x=>`<div><i>◆</i><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('')}</div></div></section>${cta()}`;
-const detail=p=>`<section class="detail"><div class="wrap detailGrid"><div><span class="pill">${p.tag}</span><h1>${p.title}</h1><p>${p.desc}</p><div class="actions"><a class="btn primary" href="${LOGIN}">Entrar no SPX OS →</a><a class="btn ghost" href="/#produto">Ver todos os módulos</a></div></div>${frame(p.img,p.tag)}</div></section><section class="section"><div class="wrap featureGrid"><div><span class="kicker">O QUE ESTA CAMADA ORGANIZA</span><h2>Menos reconstrução de contexto.<br>Mais capacidade de agir.</h2>${p.items.map(x=>`<div class="feature">✓ <b>${x}</b></div>`).join('')}</div><aside>${p.stats.map(s=>`<div><b>${s[0]}</b><span>${s[1]}</span></div>`).join('')}<p>Dados das telas reais usadas na validação visual do produto.</p></aside></div></section>${cta()}`;
+
+const productImage=(src,alt,extra='')=>`<figure class="product-shot ${extra}"><img src="${src}" alt="${alt}" loading="lazy"></figure>`;
+
+const finalCta=()=>`<section class="final-cta"><div class="wrap final-cta-inner"><div><h2>Entre no SPX OS.</h2><p>Seu ambiente operacional continua protegido em spxos.com.br.</p></div><a class="button button-light" href="${LOGIN}">Acessar plataforma</a></div></section>`;
+
+const home=()=>`
+<section class="hero-v2">
+  <div class="wrap hero-v2-copy">
+    <p class="overline">SPX OS · OPERAÇÃO COMERCIAL</p>
+    <h1>Marketing, vendas e operação.<br><span>Uma única leitura.</span></h1>
+    <p class="hero-lead">O SPX OS organiza oportunidades, atendimento, agenda, equipe e desempenho para que cada área saiba o que aconteceu, o que precisa avançar e onde a operação está perdendo eficiência.</p>
+    <div class="hero-actions-v2">
+      <a class="button button-primary" href="${LOGIN}">Acessar SPX OS</a>
+      <a class="button button-link" href="#produto">Ver produto <span>↓</span></a>
+    </div>
+  </div>
+  <div class="wrap hero-product">${productImage('/product/hoje.webp','Tela Hoje do SPX OS','hero-shot')}</div>
+</section>
+
+<section class="product-index" id="produto">
+  <div class="wrap">
+    <div class="section-intro compact">
+      <h2>Um sistema para operar o comercial do início ao fim.</h2>
+      <p>Cinco camadas que trabalham juntas, sem transformar a rotina em um conjunto de ferramentas desconectadas.</p>
+    </div>
+    <div class="module-list">
+      ${[
+        ['/jornada','01','Hoje','Prioridades, agenda e retornos'],
+        ['/crm','02','CRM','Jornada e próxima ação'],
+        ['/conversas','03','Conversas','WhatsApp com contexto'],
+        ['/inteligencia','04','Desempenho','Conversão e leitura gerencial'],
+        ['/multiunidade','05','Multiunidade','Governança e configuração']
+      ].map(x=>`<a href="${x[0]}" class="module-row"><span>${x[1]}</span><strong>${x[2]}</strong><small>${x[3]}</small><b>→</b></a>`).join('')}
+    </div>
+  </div>
+</section>
+
+<section class="feature-section">
+  <div class="wrap feature-layout">
+    <div class="feature-copy">
+      <p class="overline">ROTINA</p>
+      <h2>O sistema começa pelo trabalho que precisa acontecer hoje.</h2>
+      <p>Em vez de abrir um dashboard e procurar problemas, o time encontra interessados sem agenda, retornos vencidos, avaliações a confirmar, faltosos e acompanhamentos já organizados como ação.</p>
+      <a class="text-arrow" href="/jornada">Conhecer Jornada & Agenda →</a>
+    </div>
+    ${productImage('/product/hoje.webp','Tela Hoje do SPX OS')}
+  </div>
+</section>
+
+<section class="feature-section feature-soft">
+  <div class="wrap feature-layout reverse">
+    ${productImage('/product/conversas.webp','Tela Conversas do SPX OS')}
+    <div class="feature-copy">
+      <p class="overline">ATENDIMENTO</p>
+      <h2>A conversa já abre com o contexto da oportunidade.</h2>
+      <p>Procedimento, etapa, responsável, avaliação, orçamento, próxima ação e histórico permanecem junto do atendimento. Menos troca de abas, menos informação perdida.</p>
+      <a class="text-arrow" href="/conversas">Conhecer Conversas →</a>
+    </div>
+  </div>
+</section>
+
+<section class="journey-v2">
+  <div class="wrap journey-v2-grid">
+    <div>
+      <p class="overline inverse-overline">JORNADA COMERCIAL</p>
+      <h2>Toda oportunidade precisa de um próximo movimento.</h2>
+      <p>O SPX OS acompanha o avanço da oportunidade desde a entrada até a receita, com responsabilidade definida em cada etapa.</p>
+    </div>
+    <ol class="journey-line">
+      ${['Novo lead','Contato','Qualificação','Agendamento','Comparecimento','Fechamento'].map((s,i)=>`<li><span>${String(i+1).padStart(2,'0')}</span><strong>${s}</strong></li>`).join('')}
+    </ol>
+  </div>
+</section>
+
+<section class="feature-section">
+  <div class="wrap feature-layout">
+    <div class="feature-copy">
+      <p class="overline">GESTÃO</p>
+      <h2>Do volume à conversão. Da conversão à decisão.</h2>
+      <p>O desempenho mostra o caminho da oportunidade e destaca onde a operação perde eficiência. No exemplo real do sistema, a passagem para agendamento aparece como principal ponto de atenção.</p>
+      <div class="stat-line"><div><strong>412</strong><span>oportunidades</span></div><div><strong>61,4%</strong><span>ponto de atenção</span></div><div><strong>64</strong><span>fechamentos</span></div></div>
+      <a class="text-arrow" href="/inteligencia">Conhecer Desempenho →</a>
+    </div>
+    ${productImage('/product/desempenho.webp','Tela Desempenho do SPX OS')}
+  </div>
+</section>
+
+<section class="feature-section feature-soft">
+  <div class="wrap feature-layout reverse">
+    ${productImage('/product/configuracoes.webp','Tela Configurações do SPX OS')}
+    <div class="feature-copy">
+      <p class="overline">GOVERNANÇA</p>
+      <h2>Uma estrutura preparada para mais de uma unidade.</h2>
+      <p>Unidades, fontes, procedimentos, distribuição, equipe, acessos e automações podem ser organizados sem perder uma leitura comum da operação.</p>
+      <a class="text-arrow" href="/multiunidade">Conhecer Multiunidade →</a>
+    </div>
+  </div>
+</section>
+
+<section class="spx-principle">
+  <div class="wrap principle-grid">
+    <p>SPX</p>
+    <blockquote>“Feeling é ego. Clareza é certeza.”</blockquote>
+    <div>O sistema materializa a proposta da SPX: integrar marketing, vendas e dados para estruturar decisões de crescimento.</div>
+  </div>
+</section>
+${finalCta()}`;
+
+const detail=(p)=>`
+<section class="detail-v2">
+  <div class="wrap detail-v2-copy">
+    <a class="back-link" href="/#produto">← Produto</a>
+    <p class="overline">${p.label.toUpperCase()}</p>
+    <h1>${p.title}</h1>
+    <p class="detail-lead">${p.desc}</p>
+    <div class="hero-actions-v2"><a class="button button-primary" href="${LOGIN}">Acessar SPX OS</a></div>
+  </div>
+  <div class="wrap detail-shot">${productImage(p.img,`Tela ${p.label} do SPX OS`)}</div>
+</section>
+
+<section class="detail-content">
+  <div class="wrap detail-content-grid">
+    <div>
+      <p class="overline">NA OPERAÇÃO</p>
+      <h2>Menos reconstrução de contexto. Mais capacidade de agir.</h2>
+    </div>
+    <div class="clean-list">${p.items.map(x=>`<div><span>—</span><p>${x}</p></div>`).join('')}</div>
+  </div>
+</section>
+
+<section class="detail-facts">
+  <div class="wrap fact-grid">
+    ${p.facts.map(x=>`<div><strong>${x[0]}</strong><span>${x[1]}</span></div>`).join('')}
+    <p>Indicadores apresentados nas telas reais usadas na validação visual desta página.</p>
+  </div>
+</section>
+
+<section class="next-modules">
+  <div class="wrap">
+    <p class="overline">CONTINUE EXPLORANDO</p>
+    <div class="next-grid">
+      ${Object.entries(modules).filter(([k])=>k!==location.pathname.replace(/^\/+|\/+$/g,'')).slice(0,3).map(([k,m])=>`<a href="/${k}"><strong>${m.label}</strong><span>→</span></a>`).join('')}
+    </div>
+  </div>
+</section>
+${finalCta()}`;
+
 const slug=location.pathname.replace(/^\/+|\/+$/g,'');
 document.querySelector('#app').innerHTML=modules[slug]?detail(modules[slug]):home();
-const menu=document.querySelector('#menuBtn'),nav=document.querySelector('#mainNav');menu?.addEventListener('click',()=>nav.classList.toggle('open'));
+const menu=document.querySelector('#menuBtn');
+const nav=document.querySelector('#mainNav');
+menu?.addEventListener('click',()=>nav?.classList.toggle('open'));
