@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/polish.css" />
   <link rel="stylesheet" href="/experience-v3.css" />
+  <link rel="stylesheet" href="/experience-v3-fixes.css" />
 </head>
 <body>
   <header class="site-header">
@@ -18,62 +19,18 @@
         <svg viewBox="0 0 78 46" class="brand-crown" aria-hidden="true"><path d="M7 13l15 21 17-25 17 25 15-21-8 25H15z" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"/><circle cx="7" cy="9" r="2.5" fill="currentColor"/><circle cx="39" cy="4" r="2.5" fill="currentColor"/><circle cx="71" cy="9" r="2.5" fill="currentColor"/></svg>
         <span class="brand-text"><strong>SPX</strong><small>OS</small></span>
       </a>
-
       <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
-        <div class="nav-dropdown">
-          <button class="nav-trigger" type="button" aria-expanded="false">Produto <span>⌄</span></button>
-          <div class="nav-panel product-panel">
-            <div class="panel-intro"><small>PRODUTO</small><strong>Uma operação comercial, do primeiro contato à decisão.</strong><a href="/produto">Visão geral do produto →</a></div>
-            <div class="panel-links">
-              <a href="/produto#crm"><strong>CRM Comercial</strong><span>Jornada, responsável e próxima ação</span></a>
-              <a href="/produto#whatsapp"><strong>WhatsApp integrado</strong><span>Conversa com contexto comercial</span></a>
-              <a href="/produto#desempenho"><strong>Desempenho</strong><span>Conversão, perdas e leitura gerencial</span></a>
-              <a href="/produto#multiunidade"><strong>Multiunidade</strong><span>Governança por unidade, equipe e função</span></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="nav-dropdown">
-          <button class="nav-trigger" type="button" aria-expanded="false">Soluções <span>⌄</span></button>
-          <div class="nav-panel solution-panel">
-            <div class="panel-intro"><small>SOLUÇÕES</small><strong>A mesma operação vista por quem precisa decidir.</strong><a href="/solucoes">Ver todas as soluções →</a></div>
-            <div class="panel-links">
-              <a href="/solucoes#marketing"><strong>Marketing</strong><span>Origem, qualidade e passagem para vendas</span></a>
-              <a href="/solucoes#comercial"><strong>Comercial</strong><span>Atendimento, follow-up, agenda e proposta</span></a>
-              <a href="/solucoes#diretoria"><strong>Diretoria</strong><span>Conversão, receita e pontos de atenção</span></a>
-              <a href="/solucoes#redes"><strong>Redes e filiais</strong><span>Leitura por unidade, equipe e operação</span></a>
-            </div>
-          </div>
-        </div>
-
-        <a class="nav-link" href="/sobre">Sobre</a>
-        <a class="nav-link" href="/planos">Planos</a>
+        <div class="nav-dropdown"><button class="nav-trigger" type="button" aria-expanded="false">Produto <span>⌄</span></button><div class="nav-panel product-panel"><div class="panel-intro"><small>PRODUTO</small><strong>Uma operação comercial, do primeiro contato à decisão.</strong><a href="/produto">Visão geral do produto →</a></div><div class="panel-links"><a href="/produto#crm"><strong>CRM Comercial</strong><span>Jornada, responsável e próxima ação</span></a><a href="/produto#whatsapp"><strong>WhatsApp integrado</strong><span>Conversa com contexto comercial</span></a><a href="/produto#desempenho"><strong>Desempenho</strong><span>Conversão, perdas e leitura gerencial</span></a><a href="/produto#multiunidade"><strong>Multiunidade</strong><span>Governança por unidade, equipe e função</span></a></div></div></div>
+        <div class="nav-dropdown"><button class="nav-trigger" type="button" aria-expanded="false">Soluções <span>⌄</span></button><div class="nav-panel solution-panel"><div class="panel-intro"><small>SOLUÇÕES</small><strong>A mesma operação vista por quem precisa decidir.</strong><a href="/solucoes">Ver todas as soluções →</a></div><div class="panel-links"><a href="/solucoes#marketing"><strong>Marketing</strong><span>Origem, qualidade e passagem para vendas</span></a><a href="/solucoes#comercial"><strong>Comercial</strong><span>Atendimento, follow-up, agenda e proposta</span></a><a href="/solucoes#diretoria"><strong>Diretoria</strong><span>Conversão, receita e pontos de atenção</span></a><a href="/solucoes#redes"><strong>Redes e filiais</strong><span>Leitura por unidade, equipe e operação</span></a></div></div></div>
+        <a class="nav-link" href="/sobre">Sobre</a><a class="nav-link" href="/planos">Planos</a>
       </nav>
-
-      <div class="nav-actions">
-        <a class="text-link desktop-only" href="https://www.spxos.com.br/entrar">Entrar</a>
-        <a class="button button-primary desktop-only" href="https://www.spxos.com.br/entrar">Acessar SPX OS</a>
-        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
-      </div>
+      <div class="nav-actions"><a class="text-link desktop-only" href="https://www.spxos.com.br/entrar">Entrar</a><a class="button button-primary desktop-only" href="https://www.spxos.com.br/entrar">Acessar SPX OS</a><button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button></div>
     </div>
   </header>
-
   <main id="app"></main>
-
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <a class="brand" href="/"><svg viewBox="0 0 78 46" class="brand-crown"><path d="M7 13l15 21 17-25 17 25 15-21-8 25H15z" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"/><circle cx="7" cy="9" r="2.5" fill="currentColor"/><circle cx="39" cy="4" r="2.5" fill="currentColor"/><circle cx="71" cy="9" r="2.5" fill="currentColor"/></svg><span class="brand-text inverse"><strong>SPX</strong><small>OS</small></span></a>
-        <p>Sucesso · Posicionamento · Exclusividade</p>
-      </div>
-      <div><strong>Produto</strong><a href="/produto#crm">CRM Comercial</a><a href="/produto#whatsapp">WhatsApp</a><a href="/produto#desempenho">Desempenho</a><a href="/produto#multiunidade">Multiunidade</a></div>
-      <div><strong>Soluções</strong><a href="/solucoes#marketing">Marketing</a><a href="/solucoes#comercial">Comercial</a><a href="/solucoes#diretoria">Diretoria</a><a href="/solucoes#redes">Redes e filiais</a></div>
-      <div><strong>SPX</strong><a href="/sobre">Sobre</a><a href="/planos">Planos</a><a href="https://www.spxos.com.br/entrar">Entrar</a></div>
-    </div>
-    <div class="container copyright">© 2026 SPX. Um futuro extraordinário.</div>
-  </footer>
+  <footer><div class="container footer-grid"><div><a class="brand" href="/"><svg viewBox="0 0 78 46" class="brand-crown"><path d="M7 13l15 21 17-25 17 25 15-21-8 25H15z" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"/><circle cx="7" cy="9" r="2.5" fill="currentColor"/><circle cx="39" cy="4" r="2.5" fill="currentColor"/><circle cx="71" cy="9" r="2.5" fill="currentColor"/></svg><span class="brand-text inverse"><strong>SPX</strong><small>OS</small></span></a><p>Sucesso · Posicionamento · Exclusividade</p></div><div><strong>Produto</strong><a href="/produto#crm">CRM Comercial</a><a href="/produto#whatsapp">WhatsApp</a><a href="/produto#desempenho">Desempenho</a><a href="/produto#multiunidade">Multiunidade</a></div><div><strong>Soluções</strong><a href="/solucoes#marketing">Marketing</a><a href="/solucoes#comercial">Comercial</a><a href="/solucoes#diretoria">Diretoria</a><a href="/solucoes#redes">Redes e filiais</a></div><div><strong>SPX</strong><a href="/sobre">Sobre</a><a href="/planos">Planos</a><a href="https://www.spxos.com.br/entrar">Entrar</a></div></div><div class="container copyright">© 2026 SPX. Um futuro extraordinário.</div></footer>
   <script src="/app.js"></script>
-  <script src="/experience-v3.js"></script>
+  <script src="/experience-v3b.js"></script>
   <script src="/motion.js"></script>
 </body>
 </html>
