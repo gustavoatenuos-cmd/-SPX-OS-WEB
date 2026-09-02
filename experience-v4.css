@@ -1,0 +1,147 @@
+/* SPX OS V4 — editorial product system */
+:root{
+  --spx-serif:ui-serif,"Iowan Old Style","Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;
+  --spx-sans:"Avenir Next",Avenir,"Helvetica Neue","Segoe UI",Arial,sans-serif;
+  --spx-ease:cubic-bezier(.22,.61,.36,1);
+  --spx-radius:10px;
+  --spx-rule:rgba(13,96,61,.13);
+}
+
+html{background:#fff}
+body{font-family:var(--spx-sans);letter-spacing:-.006em;transition:opacity .22s ease,transform .28s var(--spx-ease)}
+body.v4-boot{opacity:0;transform:translateY(5px)}
+body.v4-ready{opacity:1;transform:none}
+body.v4-leaving{opacity:.45;transform:translateY(-3px);pointer-events:none}
+
+/* Brand typography: institutional headlines use the serif specified by SPX's visual logic. */
+.hero-copy-v3 h1,.v3-hero h1,.about-hero h1,.page-hero h1,
+.editorial-head h2,.split-copy h2,.manifesto-grid h2,.case-head h2,.origin-grid h2,
+.v3-feature-copy h2,.v3-section-head h2,.v3-manifesto h2,.final-cta h2{
+  font-family:var(--spx-serif);
+  font-weight:600;
+  letter-spacing:-.045em;
+  text-wrap:balance;
+}
+.v3-stage,.product-shot,.case-card,.pricing-grid article,.nav-panel{border-radius:var(--spx-radius)}
+
+/* A repeatable SPX signature: three signals converge into a single reading. */
+.spx-signal{display:flex;align-items:center;gap:9px;width:82px;height:16px;margin:0 0 24px;color:var(--green)}
+.spx-signal i{display:block;height:1px;background:currentColor;transform-origin:left center}
+.spx-signal i:nth-child(1){width:18px;opacity:.38}.spx-signal i:nth-child(2){width:28px;opacity:.68}.spx-signal i:nth-child(3){width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.spx-signal.light{color:#d7e6df}.spx-signal.light i:nth-child(3){background:var(--gold)}
+
+/* Header becomes quieter and more architectural. */
+.site-header{view-transition-name:spx-header}
+.brand{view-transition-name:spx-brand}
+.nav-wrap{height:68px}
+.nav-link,.nav-trigger{font-size:12px;letter-spacing:.005em}
+.nav-link{position:relative}
+.nav-link::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:1px;background:var(--green);transform:scaleX(0);transform-origin:left;transition:transform .22s var(--spx-ease)}
+.nav-link:hover::after,.nav-link[aria-current="page"]::after{transform:scaleX(1)}
+.nav-trigger span{font-family:var(--spx-sans)}
+.nav-panel{border-color:rgba(13,96,61,.14);box-shadow:0 26px 70px rgba(4,35,24,.11)}
+.panel-intro strong{font-family:var(--spx-serif);font-weight:600;font-size:20px}
+.panel-links a{border-radius:6px}
+.panel-links a:hover{background:#f4f7f5}
+
+/* Route progress: useful orientation instead of decorative motion. */
+.v4-progress{position:fixed;z-index:120;left:0;top:0;width:100%;height:2px;pointer-events:none;background:transparent}
+.v4-progress span{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--green),var(--gold));transform:scaleX(0);transform-origin:left center;will-change:transform}
+.v4-route-rail{position:fixed;z-index:45;left:max(18px,calc((100vw - 1380px)/2));top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:2px;padding:7px;background:rgba(255,255,255,.82);border:1px solid rgba(13,96,61,.10);backdrop-filter:blur(14px);border-radius:8px;box-shadow:0 10px 30px rgba(5,45,33,.05)}
+.v4-route-rail a{display:grid;grid-template-columns:14px 1fr;gap:6px;align-items:center;min-width:106px;padding:7px 8px;border-radius:5px;color:#7a8780;font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:color .18s ease,background .18s ease}
+.v4-route-rail a::before{content:"";width:4px;height:4px;border:1px solid currentColor;border-radius:50%;transition:background .18s ease,transform .18s ease}
+.v4-route-rail a:hover,.v4-route-rail a.active{color:var(--green);background:#f4f8f5}
+.v4-route-rail a.active::before{background:var(--gold);border-color:var(--gold);transform:scale(1.25)}
+
+/* Editorial composition — deliberate asymmetry, fewer generic SaaS cards. */
+.v3-hero{position:relative;overflow:clip}
+.v3-hero::before{content:"";position:absolute;left:calc(50% - 1px);top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(13,96,61,.10) 28%,rgba(13,96,61,.10) 72%,transparent);pointer-events:none}
+.v3-hero-grid{position:relative}
+.v3-hero-copy{padding-right:28px}
+.v3-hero-copy>p:not(.eyebrow){max-width:600px}
+.v3-stage{box-shadow:0 28px 70px rgba(5,45,33,.075);border-color:rgba(13,96,61,.13)}
+.v3-stage-top{background:linear-gradient(180deg,#fcfdfc,#f8faf9)}
+.v3-live{font-size:8px;letter-spacing:.13em;text-transform:uppercase}
+
+.v3-feature{position:relative}
+.v3-feature::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent 0,var(--spx-rule) 13%,var(--spx-rule) 87%,transparent 100%)}
+.v3-feature-copy{max-width:520px}
+.v3-feature-copy p:not(.eyebrow){max-width:48ch}
+.v3-feature-copy .clean-points{margin-top:32px}
+.v3-feature-copy .clean-points li{padding:12px 0;color:#536159}
+.v3-feature-copy .clean-points li::before{content:"";display:inline-block;width:12px;height:1px;background:var(--gold);vertical-align:middle;margin-right:11px}
+
+/* Product demonstrations feel like tools, not floating AI cards. */
+.crm-stage-node,.perf-kpi,.perf-card,.unit-kpi,.unit-card,.source-chip,.task-card,.unit-box,.resolver-row,.arch-layer{
+  border-radius:7px!important;
+}
+.crm-new,.crm-filter,.unit-tab,.exec-filter button{border-radius:5px!important}
+.v3-stage button,.v3-stage [role="button"],.crm-stage-node,.unit-box,.arch-layer{transition:transform .18s var(--spx-ease),border-color .18s ease,background .18s ease,box-shadow .18s ease}
+.v3-stage button:hover,.crm-stage-node:hover,.unit-box:hover,.arch-layer:hover{transform:translateY(-2px)}
+
+/* Pricing: closer to an editorial comparison table than an AI SaaS pricing template. */
+.v3-page .pricing-grid{gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.v3-page .pricing-grid article,.v3-page .pricing-grid article+article{border:0!important;border-left:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important;padding:36px!important;transform:none!important;background:#fff}
+.v3-page .pricing-grid article:first-child{border-left:0!important}
+.v3-page .pricing-grid article.featured{background:#f7faf8}
+.v3-page .pricing-grid article.featured::before{display:none!important}
+.v3-page .pricing-grid article:hover{background:#fafcfb;transform:none!important}
+.v3-page .pricing-grid h2{font-family:var(--spx-serif);font-weight:600;font-size:29px}
+.v3-page .pricing-grid small{letter-spacing:.17em}
+.v3-page .pricing-grid li::before{content:"—";font-weight:400;color:var(--gold)}
+
+/* Home gets an editorial rhythm instead of repeating card language. */
+.hero-v3{position:relative;overflow:clip}
+.hero-v3::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,transparent 49.95%,rgba(13,96,61,.055) 50%,transparent 50.05%);pointer-events:none}
+.hero-copy-v3 .eyebrow,.v3-hero .eyebrow{margin-bottom:13px}
+.hero-copy-v3 h1{font-size:clamp(54px,6.2vw,92px);max-width:1000px;margin-inline:auto}
+.hero-lead{max-width:680px}
+.product-shot{border-color:rgba(13,96,61,.13);box-shadow:0 25px 70px rgba(5,45,33,.075)}
+
+/* Long page rendering: offscreen sections do not pay full layout/paint cost. */
+@supports(content-visibility:auto){
+  .v3-page>.v3-feature,.v3-page>.section,.v3-page>.dark-section,.v3-page>.v3-manifesto,
+  .case-section,.plans-preview,.product-proof,.editorial:not(:first-child){
+    content-visibility:auto;
+    contain-intrinsic-size:auto 780px;
+  }
+}
+
+/* Load-state skeletons avoid image pop and reserve geometry. */
+.product-shot{position:relative;min-height:1px}
+.product-shot::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,#f7f9f8 20%,#fcfdfc 40%,#f7f9f8 60%);background-size:200% 100%;opacity:0;pointer-events:none}
+.product-shot.v4-loading::before{opacity:1;animation:v4-shimmer 1.2s linear infinite}
+.product-shot.v4-loaded::before{display:none}
+@keyframes v4-shimmer{to{background-position:-200% 0}}
+
+/* Route entrance and native/cross-document View Transitions. */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:v4-out .16s ease both}
+::view-transition-new(root){animation:v4-in .28s var(--spx-ease) both}
+::view-transition-old(spx-header),::view-transition-new(spx-header),::view-transition-old(spx-brand),::view-transition-new(spx-brand){animation:none;mix-blend-mode:normal}
+@keyframes v4-out{to{opacity:.82;transform:translateY(-4px)}}
+@keyframes v4-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Fine-grained entrance only once. */
+.v4-enter{opacity:0;transform:translateY(18px)}
+.v4-enter.v4-shown{opacity:1;transform:none;transition:opacity .55s var(--spx-ease),transform .7s var(--spx-ease)}
+.v4-enter[data-v4-delay="1"]{transition-delay:.05s}.v4-enter[data-v4-delay="2"]{transition-delay:.10s}.v4-enter[data-v4-delay="3"]{transition-delay:.15s}
+
+/* Keyboard and accessibility polish. */
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:4px}
+::selection{background:rgba(228,161,38,.25);color:#071712}
+
+@media(max-width:1240px){.v4-route-rail{display:none}}
+@media(max-width:1000px){
+  .nav-wrap{height:64px}.v3-hero::before,.hero-v3::after{display:none}
+  .v3-page .pricing-grid{gap:12px;border:0}
+  .v3-page .pricing-grid article,.v3-page .pricing-grid article+article{border:1px solid var(--line)!important;border-radius:10px!important;padding:28px!important}
+}
+@media(max-width:640px){
+  .hero-copy-v3 h1{font-size:46px}.v3-hero h1{font-size:44px}.v3-hero-copy{padding-right:0}
+  .spx-signal{margin-bottom:18px}.v3-page .pricing-grid article,.v3-page .pricing-grid article+article{padding:24px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  body{transition:none!important}.v4-enter{opacity:1!important;transform:none!important}.product-shot.v4-loading::before{animation:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none!important}
+}
